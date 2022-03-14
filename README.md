@@ -54,6 +54,13 @@ J'utilise ``PMA`` qui est une application Web de gestion pour les systèmes de g
 ![image](https://user-images.githubusercontent.com/74382279/158244976-9db7876b-a1c5-4598-a7b3-ca2cc81b535b.png)
 <br/><br/>
 Grossomodo, chaque base de données contient des tables, qui elles contiennent des colonnes où nous pouvons stocker des données.<br/>
-
+Pour la création de ces derniers on va exécuter du code SQL directement via 
+```sql
+CREATE TABLE users (
+	id int(10) AUTO_INCREMENT NOT NULL,
+	username VARCHAR(100) NOT NULL,
+	PRIMARY KEY(id)
+) ENGINE=innodb AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+```
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.
