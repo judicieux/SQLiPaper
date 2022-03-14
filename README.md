@@ -65,6 +65,6 @@ CREATE TABLE users (
 Comme son nom l'indique, l'instruction ``CREATE TABLE`` permet de créer une table. Ici nous créons la table ``users``.<br/>
 On assigne deux colonnes à la table ``users``, notamment ``id`` et ``username``. On passe la valeur ``PRIMARY KEY`` à la colonne ``id``.<br/> 
 La commande ``AUTO_INCREMENT`` est utilisée afin de spécifier qu’une colonne ``int`` avec une ``PRIMARY KEY`` sera incrémentée automatiquement à chaque ajout d’enregistrement dans celle-ci.<br/>
-``int(10)`` signifie qu'on a défini ``id`` comme ``INT UNSIGNED``. Ainsi, on pourra stocker des nombres allant de 0 jusqu'à 4294967295 (à noter que la valeur maximale a 10 chiffres, donc MySQL ajoute automatiquement le (10) dans la définition de la colonne qui (10) n'est qu'un indice de format et rien de plus. Ça n'a aucun effet sur la taille du nombre que vous pouvez stocker).<br/>
+``int(10)`` signifie qu'on a défini ``id`` comme ``INT UNSIGNED``. Ainsi, on pourra stocker des nombres allant de ``0`` jusqu'à ``4294967295`` (à noter que la valeur maximale est composée 10 chiffres, donc MySQL ajoute automatiquement le (10) dans la définition de la colonne qui (10) n'est qu'un indice de format et rien de plus. Ça n'a aucun effet sur la taille du nombre que vous pouvez stocker).<br/>
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.
