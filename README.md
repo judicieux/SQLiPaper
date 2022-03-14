@@ -11,8 +11,8 @@ La faille SQLi représente actuellement presque 2/3 des attaques application web
 Voici les différents types d'SQLi énumérés du plus edgy au plus soft (selon moi):
 
 1. Routed based -> IB
-2. Blind based (ou inférentiel) -> OOB
-3. Time based (ou total blind based) -> OOB
+2. Blind based (inférentiel) -> OOB
+3. Time based (inférentiel) -> OOB
 4. Union based -> IB
 
 IB: In band<br/>
@@ -20,4 +20,4 @@ OOB: Out of band
 <br/><br/>
 Dans les 4 cas, nous utiliserons les mêmes méthodes d'approche.<br/>
 J'introduirai aussi quelques techniques de bypass basiques pour avoid plusieurs filtres présents dans des WAF.<br/>
-J'évoquerai aussi la puissance des jointures SQL. Les jointures en SQL permettent d’associer plusieurs tables dans une même requête. Cela permet d’exploiter la puissance des bases de données relationnelles pour obtenir des résultats qui combinent les données de plusieurs tables de manière efficace.
+J'évoquerai aussi la puissance des jointures SQL.
