@@ -44,9 +44,12 @@ J'utilise phpMyAdmin qui est une application Web de gestion pour les systèmes d
 J'ai choisi WampServer car il nous permet aussi d'accéder à phpMyAdmin.<br/>
 Même étape vous lancez WampServer et vous cliquez sur:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158241274-b9f23547-1a1b-49c9-b915-306d45921b0c.png)
-<br/><b/>
-Puis vous créez une nouvelle base de donnée en suivant les étapes figurés ci-dessous:<br/><br/>
+<br/><br/>
+Puis vous créez une nouvelle base de donnée en suivant les étapes figurées ci-dessous:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158242535-0b05fe6e-d5f4-4498-82c4-b09bad167bd9.png)
 <br/><br/>
+Avant d'attaquer la suite, j'aimerais vous faire comprendre de quoi est structurée une base de donnée.<br/>
+Une base de données permet de stocker et de retrouver des données structurées, semi-structurées ou des données brutes ou de l'information (cf. ixa qui stocke tout sous txt ¯\_(ツ)_/¯)
+
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.
