@@ -93,9 +93,6 @@ Voici une instruction typique qui utilise l'opérateur UNION:
 UNION SELECT id, username FROM users;
 ```
 Cette instruction demande à la ``BDD`` de retourner la colonne ``id`` et ``username`` de la table ``users``.<br/>
-Chaque SELECTinstruction à l'intérieur UNIONdoit avoir le même nombre de colonnes
-Les colonnes doivent également avoir des types de données similaires
-Les colonnes de chaque SELECTinstruction doivent également être dans le même ordre
 
 ### Rerences
 - https://stackoverflow.com/questions/10879345/what-is-the-maximum-size-of-int10-in-mysql
