@@ -15,7 +15,7 @@ Voici les différents types d'SQLi énumérés du plus edgy au plus soft (selon 
 3. Time based (ou total blind based) -> OOB
 4. Union based -> IB
 <br/>
-IB: In band
+IB: In band<br/>
 OOB: Out of band
 <br/>
 Dans les 4 cas, nous utiliserons les mêmes méthodes d'approche.<br/>
