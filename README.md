@@ -72,8 +72,10 @@ CREATE TABLE users (
 • ``ENGINE=innodb`` permet de définir le moteur de stockage par défaut utilisé par MySQL. Son principal avantage par rapport aux autres moteurs de stockage de MySQL est qu'il permet des transactions ``ACID`` (atomiques, cohérentes, isolées et durables), ainsi que la gestion des clés étrangères avec vérification de la cohérence.<br/><br/>
 • Utilisez toujours ``DEFAULT CHARSET=utf8`` lors de la création de nouvelles tables. A ce stade, votre client et votre serveur MySQL doivent être en ``UTF-8`` (cf. https://my.cnf). n'oubliez pas que tous les langages que vous utilisez (tels que ``PHP``) doivent également être sous ``UTF-8``. Certaines versions de PHP utilisent leur propre lib client MySQL, qui peut ne pas être compatible avec ``UTF-8``.<br/>
 Il nous reste qu'à exécuter:<br/><br/>
-![image](https://user-images.githubusercontent.com/74382279/158256473-9729f921-6fa3-4725-89ed-2bd04979c380.png)
+![image](https://user-images.githubusercontent.com/74382279/158256871-88e2a443-5c71-435e-9238-b9c3537e6bd9.png)
 <br/><br/>
+On peut constater que la table ``users`` et les colonnes ``id`` & ``username`` ont bien été créé dans la base de donnée ``sqlipaper`` avec les paramètres qu'on leur a assigné.<br/>
+On est donc prêt à exploiter la base de donnée.<br/>
 
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.
