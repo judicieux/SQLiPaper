@@ -71,6 +71,9 @@ CREATE TABLE users (
 • ``int(10)`` signifie qu'on a défini ``id`` comme ``INT UNSIGNED``. Ainsi, on pourra stocker des nombres allant de ``0`` jusqu'à ``4294967295`` (à noter que la valeur maximale est composée 10 chiffres, donc MySQL ajoute automatiquement le (10) dans la définition de la colonne qui (10) n'est qu'un indice de format et rien de plus. Ça n'a aucun effet sur la taille du nombre que vous pouvez stocker).<br/><br/>
 • ``ENGINE=innodb`` permet de définir le moteur de stockage par défaut utilisé par MySQL. Son principal avantage par rapport aux autres moteurs de stockage de MySQL est qu'il permet des transactions ``ACID`` (atomiques, cohérentes, isolées et durables), ainsi que la gestion des clés étrangères avec vérification de la cohérence.<br/><br/>
 • Utilisez toujours ``DEFAULT CHARSET=utf8`` lors de la création de nouvelles tables. A ce stade, votre client et votre serveur MySQL doivent être en ``UTF-8`` (cf. https://my.cnf). n'oubliez pas que tous les langages que vous utilisez (tels que ``PHP``) doivent également être sous ``UTF-8``. Certaines versions de PHP utilisent leur propre lib client MySQL, qui peut ne pas être compatible avec ``UTF-8``.<br/>
+Il nous reste qu'à exécuter:<br/><br/>
+![image](https://user-images.githubusercontent.com/74382279/158256473-9729f921-6fa3-4725-89ed-2bd04979c380.png)
+<br/><br/>
 
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.
