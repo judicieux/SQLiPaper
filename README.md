@@ -14,10 +14,10 @@ Voici les différents types d'SQLi énumérés du plus edgy au plus soft (selon 
 2. Blind based (ou inférentiel) -> OOB
 3. Time based (ou total blind based) -> OOB
 4. Union based -> IB
-<br/>
+
 IB: In band<br/>
 OOB: Out of band
-<br/>
+<br/><br/>
 Dans les 4 cas, nous utiliserons les mêmes méthodes d'approche.<br/>
 J'introduirai aussi quelques techniques de bypass basiques pour avoid plusieurs filtres présents dans des WAF.<br/>
 A noter que chaque cas de figure est différent, l'injection SQL est réputé pour être 
