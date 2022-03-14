@@ -32,7 +32,7 @@ J'utilise phpMyAdmin qui est une application Web de gestion pour les systèmes d
 # Steps
 ### WampServer
 • Une fois tout installé, lancez WampServer.<br/>
-• Rendez vous dans la path ``/www`` en appuyant sur:<br/><br/>
+• Rendez vous dans la path ``/www`` en cliquant sur:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158238868-e9d82156-c272-440a-8870-2474de621a1e.png)
 <br/><br/>
 • Créez votre dossier projet avec dedans un fichier ``.php``, dans mon cas le dossier se nomme ``/sqlipaper`` et le fichier ``index.php``.<br/>
@@ -41,6 +41,9 @@ J'utilise phpMyAdmin qui est une application Web de gestion pour les systèmes d
 ![image](https://user-images.githubusercontent.com/74382279/158240258-d9cd88c3-33ae-4659-a3a5-0a38a5cfd94d.png)
 <br/><br/>
 ### phpMyAdmin
-
+J'ai choisi WampServer car il nous permet aussi d'accéder à phpMyAdmin.<br/>
+Même étape vous lancez WampServer et vous cliquez sur:<br/><br/>
+![image](https://user-images.githubusercontent.com/74382279/158241274-b9f23547-1a1b-49c9-b915-306d45921b0c.png)
+<br/><b/>
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.
