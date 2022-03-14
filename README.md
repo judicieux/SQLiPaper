@@ -41,15 +41,19 @@ J'utilise phpMyAdmin qui est une application Web de gestion pour les systèmes d
 ![image](https://user-images.githubusercontent.com/74382279/158240258-d9cd88c3-33ae-4659-a3a5-0a38a5cfd94d.png)
 <br/><br/>
 ### phpMyAdmin
-J'ai choisi WampServer car il nous permet aussi d'accéder à phpMyAdmin.<br/>
-Même étape vous lancez WampServer et vous cliquez sur:<br/><br/>
+• J'ai choisi WampServer car il nous permet aussi d'accéder à phpMyAdmin.<br/>
+• Même étape vous lancez WampServer et vous cliquez sur:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158241274-b9f23547-1a1b-49c9-b915-306d45921b0c.png)
 <br/><br/>
-Puis vous créez une nouvelle base de donnée en suivant les étapes figurées ci-dessous:<br/><br/>
+• Puis vous créez une nouvelle base de donnée en suivant les étapes figurées ci-dessous:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158242535-0b05fe6e-d5f4-4498-82c4-b09bad167bd9.png)
 <br/><br/>
-Avant d'attaquer la suite, j'aimerais vous faire comprendre de quoi est structurée une base de donnée.<br/>
-Une base de données permet de stocker et de retrouver des données structurées, semi-structurées ou des données brutes ou de l'information (cf. ixa qui stocke tout sous txt ``¯\_(ツ)_/¯``)
+• Avant d'attaquer la suite, j'aimerais vous faire comprendre de quoi est structurée une base de donnée.<br/>
+• Une base de données permet de stocker et de retrouver des données structurées, semi-structurées ou des données brutes ou de l'information (cf. ixa qui stocke tout sous txt ``¯\_(ツ)_/¯``).
+• Je vous ai fait une petite représentation à l'aide de Lightshot:<br/><br/>
+![image](https://user-images.githubusercontent.com/74382279/158244976-9db7876b-a1c5-4598-a7b3-ca2cc81b535b.png)
+<br/><br/>
+Grossomodo, chaque base de données contient des tables, qui elles contiennent des colonnes où nous pouvons stocker des données.<br/>
 
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.
