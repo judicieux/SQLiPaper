@@ -10,14 +10,14 @@ La faille SQLi représente actuellement presque 2/3 des attaques application web
 ## Background
 Voici les différents types d'SQLi énumérés du plus edgy au plus soft (selon moi):
 
-1. Routed based - IB
+1. Routed based -> IB
 2. Blind based (ou inférentiel) -> OOB
 3. Time based (ou total blind based) -> OOB
 4. Union based -> IB
-
-IB = In band
-OOB = Out of band
-
+<br/>
+IB: In band
+OOB: Out of band
+<br/>
 Dans les 4 cas, nous utiliserons les mêmes méthodes d'approche.<br/>
 J'introduirai aussi quelques techniques de bypass basiques pour avoid plusieurs filtres présents dans des WAF.<br/>
 A noter que chaque cas de figure est différent, l'injection SQL est réputé pour être 
