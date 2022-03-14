@@ -74,8 +74,7 @@ CREATE TABLE users (
 Il nous reste qu'à exécuter:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158256871-88e2a443-5c71-435e-9238-b9c3537e6bd9.png)
 <br/><br/>
-On peut constater que la table ``users`` et les colonnes ``id`` & ``username`` ont bien été créé dans la base de donnée ``sqlipaper`` avec les paramètres qu'on leur a assigné.<br/>
-Tout est prêt, il nous manque plus qu'à scripter le code PHP vulnérable.<br/>
+On peut constater que la table ``users`` et les colonnes ``id`` & ``username`` ont bien été créé dans la base de donnée ``sqlipaper`` avec les paramètres qu'on leur a assigné. Tout est prêt, il nous manque plus qu'à scripter le code PHP vulnérable.<br/>
 On se rend au fichier ``PHP`` qu'on a créé tout à l'heure, et c'est parti pour la premier type d'SQLi.<br/><br/>
 
 ## Union Based
