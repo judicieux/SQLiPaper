@@ -5,7 +5,7 @@ L'injection SQL est un vecteur d'attaque qui offre la possibilité d'insérer du
 J'utilise MySQL comme système de gestion de base de données relationnelle.<br/>
 La faille SQLi est la plus commune selon OWASP.<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158231255-20de1032-9c3b-4cdd-9cf1-34a425caaa1e.png)
-<br/><br/>
+<br/>
 
 ## Background
 Voici les différents types d'SQLi énumérés du plus edgy au plus soft (selon moi):
