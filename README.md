@@ -67,8 +67,7 @@ CREATE TABLE users (
 • La contrainte ``PRIMARY KEY`` identifie de manière unique chaque enregistrement dans une table. Les clés primaires doivent contenir des valeurs uniques et ne peuvent pas contenir de valeurs ``NULL`` ou de doublons. Une table ne peut avoir qu'une clé primaire ; et dans le tableau, cette clé primaire peut consister en une ou plusieurs colonnes (champs).<br/><br/>
 • La commande ``AUTO_INCREMENT`` est utilisée afin de spécifier qu’une colonne ``int`` avec une ``PRIMARY KEY`` sera incrémentée automatiquement à chaque ajout d’enregistrement dans celle-ci.<br/><br/>
 • ``int(10)`` signifie qu'on a défini ``id`` comme ``INT UNSIGNED``. Ainsi, on pourra stocker des nombres allant de ``0`` jusqu'à ``4294967295`` (à noter que la valeur maximale est composée 10 chiffres, donc MySQL ajoute automatiquement le (10) dans la définition de la colonne qui (10) n'est qu'un indice de format et rien de plus. Ça n'a aucun effet sur la taille du nombre que vous pouvez stocker).<br/><br/>
-• ``ENGINE=innodb`` permet de définir le moteur de stockage par défaut utilisé par MySQL.<br/>
-• Son principal avantage par rapport aux autres moteurs de stockage de MySQL est qu'il permet des transactions ``ACID`` (atomiques, cohérentes, isolées et durables), ainsi que la gestion des clés étrangères avec vérification de la cohérence.<br/>
+• ``ENGINE=innodb`` permet de définir le moteur de stockage par défaut utilisé par MySQL. Son principal avantage par rapport aux autres moteurs de stockage de MySQL est qu'il permet des transactions ``ACID`` (atomiques, cohérentes, isolées et durables), ainsi que la gestion des clés étrangères avec vérification de la cohérence.<br/>
 
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.
