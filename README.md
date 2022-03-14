@@ -49,7 +49,7 @@ J'utilise ``PMA`` qui est une application Web de gestion pour les systèmes de g
 ![image](https://user-images.githubusercontent.com/74382279/158242535-0b05fe6e-d5f4-4498-82c4-b09bad167bd9.png)
 <br/><br/>
 • Avant d'attaquer la suite, j'aimerais vous faire comprendre de quoi est structurée une base de donnée.<br/>
-• Une base de données permet de stocker et de retrouver des données structurées, semi-structurées ou des données brutes ou de l'information (cf. ixa qui stocke tout sous txt ``¯\_(ツ)_/¯``).<br/>
+• Une base de données permet de stocker et de retrouver des données structurées, semi-structurées ou des données brutes ou de l'information (cf. ixa qui stocke tout sous txt à coup de fopen() & fgets() ``¯\_(ツ)_/¯``).<br/>
 • Je vous ai fait une petite représentation à l'aide de Lightshot:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158244976-9db7876b-a1c5-4598-a7b3-ca2cc81b535b.png)
 <br/><br/>
