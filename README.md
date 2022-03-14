@@ -74,8 +74,15 @@ CREATE TABLE users (
 Il nous reste qu'à exécuter:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158256871-88e2a443-5c71-435e-9238-b9c3537e6bd9.png)
 <br/><br/>
-On peut constater que la table ``users`` et les colonnes ``id`` & ``username`` ont bien été créé dans la base de donnée ``sqlipaper`` avec les paramètres qu'on leur a assigné. Tout est prêt, il nous manque plus qu'à scripter le code PHP vulnérable.<br/>
+On peut constater que la table ``users`` et les colonnes ``id`` & ``username`` ont bien été créé dans la base de donnée ``sqlipaper`` avec les paramètres qu'on leur a assigné. Tout est prêt, il nous manque plus qu'à scripter le code SQL vulnérable.<br/>
 On se rend au fichier ``PHP`` qu'on a créé tout à l'heure, et c'est parti pour la premier type d'SQLi.<br/><br/>
 
 ## Union Based
-Rentrons dans le vif du sujet en commençant par le plus simple.
+Rentrons dans le vif du sujet en commençant par le plus simple.<br/>
+
+
+### Rerences
+- https://stackoverflow.com/questions/10879345/what-is-the-maximum-size-of-int10-in-mysql
+- https://stackoverflow.com/questions/202205/how-to-make-mysql-handle-utf-8-properly
+- https://dev.mysql.com/
+- https://www.cisecurity.org/wp-content/uploads/2017/05/SQL-Injection-White-Paper2.pdf
