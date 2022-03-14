@@ -22,5 +22,9 @@ Dans les 4 cas, nous utiliserons les mêmes méthodes d'approche.<br/>
 J'introduirai aussi quelques techniques de bypass basiques pour avoid plusieurs filtres présents dans des WAF.<br/>
 J'évoquerai aussi la puissance des jointures SQL et à quoi ça sert de les utiliser dans le contexte d'une attaque.<br/>
 
+# Setup
+Avant de commencer, il est important de déployer un serveur web local ainsi que PMA (phpMyAdmin).<br/>
+Pour comprendre l'essence de la faille il faut pratiquer, et sans mise en contexte c'est pas possible.<br/>
+Pour ce faire je vais utiliser WampServer, c'est une plateforme de développement Web de type WAMP, permettant de faire fonctionner localement des scripts PHP. 
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.
