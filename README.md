@@ -36,5 +36,9 @@ J'utilise phpMyAdmin qui est une application Web de gestion pour les systèmes d
 <br/><br/>
 • Créez votre dossier projet avec dedans fichier ``.php``, dans mon cas le dossier se nomme ``/sqlipaper`` et le fichier ``index.php``.<br/>
 • Mettez votre adresse loopback avec le dossier correspondant dans n'importe quel navigateur web (``http://127.0.0.1/sqlipaper/index.php``).<br/>
+• Si vous voyez la petite icone WampServer c'est que votre fichier est bien hébergé par WampServer.<br/><br/>
+![image](https://user-images.githubusercontent.com/74382279/158240258-d9cd88c3-33ae-4659-a3a5-0a38a5cfd94d.png)
+<br/><br/>
+
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.
