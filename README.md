@@ -1,10 +1,11 @@
 # SQLiPaper
-![image](https://user-images.githubusercontent.com/74382279/158230316-5e8ea59a-1b35-4251-a085-9ea9ffce0cf7.png)
-<br/>
+
 Ce paper traîtera les différents vecteurs d'attaque dans le cas où une injection SQL est possible.<br/>
 L'injection SQL est un vecteur d'attaque qui offre la possibilité d'insérer du code sur mesure dans une application et de le faire exécuter automatiquement sur des systèmes backend inaccessibles.<br/>
 J'utilise MySQL comme système de gestion de base de données relationnelle.<br/>
-La faille SQLi est la plus 
+La faille SQLi est la plus commune selon OWASP.<br/><br/>
+![image](https://user-images.githubusercontent.com/74382279/158231255-20de1032-9c3b-4cdd-9cf1-34a425caaa1e.png)
+<br/><br/>
 
 ## Background
 Voici les différents types d'SQLi énumérés du plus edgy au plus soft (selon moi):
@@ -16,4 +17,4 @@ Voici les différents types d'SQLi énumérés du plus edgy au plus soft (selon 
 
 Dans les 4 cas figurés, nous utiliserons les mêmes méthodes d'approche.<br/>
 J'introduirai aussi les techniques de base pour bypass certains WAF.<br/>
-A noter que chaque cas de figure est différent, les SQLi sont réputés pour être
+A noter que chaque cas de figure est différent, l'injection SQL est réputé pour être 
