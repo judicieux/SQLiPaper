@@ -57,9 +57,11 @@ Grossomodo, chaque base de données contient des tables, qui elles contiennent d
 Pour la création de ces derniers on va exécuter du code SQL, la création peut aussi se faire de façon interfacée.<br/> 
 ```sql
 CREATE TABLE users (
+
 	id int(10) AUTO_INCREMENT NOT NULL,
 	username VARCHAR(100) NOT NULL,
 	PRIMARY KEY(id)
+
 ) ENGINE=innodb AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 ```
 • Comme son nom l'indique, l'instruction ``CREATE TABLE`` permet de créer une table. Ici nous créons la table ``users``.<br/>
