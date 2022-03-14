@@ -7,7 +7,7 @@ J'utilise MySQL comme système de gestion de base de données relationnelle.<br/
 La faille SQLi est la plus 
 
 ## Background
-Voici les différents types d'SQLi énumérés du plus edgy au plus soft:
+Voici les différents types d'SQLi énumérés du plus edgy au plus soft (selon moi):
 
 1. Routed based
 2. Blind based
