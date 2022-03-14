@@ -30,9 +30,10 @@ Si on veut exécuter du SQL il nous faudra une base de donnée avec laquelle on 
 J'utilise phpMyAdmin qui est une application Web de gestion pour les systèmes de gestion de base de données MySQL<br/><br/>
 
 # Steps
-Une fois tout installé, lancez WampServer.<br/>
-Rendez vous dans la path ``/www`` en appuyant sur:<br/><br/>
+• Une fois tout installé, lancez WampServer.<br/>
+• Rendez vous dans la path ``/www`` en appuyant sur:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158238868-e9d82156-c272-440a-8870-2474de621a1e.png)
 <br/>
+• Créez votre dossier projet, dans mon cas je l'appellerai ``sqlpaper``
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.
