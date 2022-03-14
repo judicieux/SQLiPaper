@@ -20,4 +20,4 @@ OOB: Out of band
 <br/><br/>
 Dans les 4 cas, nous utiliserons les mêmes méthodes d'approche.<br/>
 J'introduirai aussi quelques techniques de bypass basiques pour avoid plusieurs filtres présents dans des WAF.<br/>
-A noter que chaque cas de figure est différent, l'injection SQL est réputé pour être 
+J'évoquerai aussi la puissance des jointures SQL. Les jointures en SQL permettent d’associer plusieurs tables dans une même requête. Cela permet d’exploiter la puissance des bases de données relationnelles pour obtenir des résultats qui combinent les données de plusieurs tables de manière efficace.
