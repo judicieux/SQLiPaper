@@ -31,7 +31,7 @@ J'utilise phpMyAdmin qui est une application Web de gestion pour les systèmes d
 
 # Steps
 Une fois tout installé, lancez WampServer.<br/>
-Rendez vous dans la path /www en appuyant sur:<br/>
+Rendez vous dans la path ``/www`` en appuyant sur:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158238868-e9d82156-c272-440a-8870-2474de621a1e.png)
 <br/>
 ## Union Based
