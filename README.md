@@ -20,4 +20,4 @@ OOB: Out of band
 <br/><br/>
 Dans les 4 cas, nous utiliserons les mêmes méthodes d'approche.<br/>
 J'introduirai aussi quelques techniques de bypass basiques pour avoid plusieurs filtres présents dans des WAF.<br/>
-J'évoquerai aussi la puissance des jointures SQL.
+J'évoquerai aussi la puissance des jointures SQL et à quoi ça sert de les utiliser dans le contexte d'une attaque.<br/>
