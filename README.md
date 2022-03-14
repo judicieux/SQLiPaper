@@ -23,8 +23,11 @@ J'introduirai aussi quelques techniques de bypass basiques pour avoid plusieurs 
 J'évoquerai aussi la puissance des jointures SQL et à quoi ça sert de les utiliser dans le contexte d'une attaque.<br/>
 
 # Setup
-Avant de commencer, il est important de déployer un serveur web local ainsi que PMA (phpMyAdmin).<br/>
-Pour comprendre l'essence de la faille il faut pratiquer, et sans mise en contexte c'est pas possible.<br/>
-Pour ce faire je vais utiliser WampServer, c'est une plateforme de développement Web de type WAMP, permettant de faire fonctionner localement des scripts PHP. 
+Avant de commencer, il est important de déployer un serveur web localement ainsi que PMA (phpMyAdmin).<br/>
+Afin de comprendre l'essence de la faille il faut comprendre le code qui l'induit et sans mise en contexte c'est pas possible.<br/>
+Pour ce faire je vais utiliser WampServer, c'est une plateforme de développement Web de type WAMP, permettant de faire fonctionner localement des scripts PHP.<br/>
+Si on veut exécuter du SQL il nous faudra une base de donnée avec laquelle on pourra interagir.<br/> 
+J'utilise phpMyAdmin qui est une application Web de gestion pour les systèmes de gestion de base de données MySQL<br/>
+
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.
