@@ -27,7 +27,12 @@ Avant de commencer, il est important de déployer un serveur web localement ains
 Afin de comprendre l'essence de la faille il faut comprendre le code qui l'induit et sans mise en contexte c'est pas possible.<br/>
 Pour ce faire je vais utiliser WampServer, c'est une plateforme de développement Web de type WAMP, permettant de faire fonctionner localement des scripts PHP.<br/>
 Si on veut exécuter du SQL il nous faudra une base de donnée avec laquelle on pourra interagir.<br/> 
-J'utilise phpMyAdmin qui est une application Web de gestion pour les systèmes de gestion de base de données MySQL<br/>
+J'utilise phpMyAdmin qui est une application Web de gestion pour les systèmes de gestion de base de données MySQL<br/><br/>
 
+# Steps
+Une fois tout installé, lancez WampServer.<br/>
+Rendez vous dans la path /www en appuyant sur:<br/>
+![image](https://user-images.githubusercontent.com/74382279/158238868-e9d82156-c272-440a-8870-2474de621a1e.png)
+<br/>
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.
