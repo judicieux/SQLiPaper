@@ -69,20 +69,37 @@ CREATE TABLE users (
 • La contrainte ``PRIMARY KEY`` identifie de manière unique chaque enregistrement dans une table. Les clés primaires doivent contenir des valeurs uniques et ne peuvent pas contenir de valeurs ``NULL`` ou de doublons. Une table ne peut avoir qu'une clé primaire ; et dans le tableau, cette clé primaire peut consister en une ou plusieurs colonnes (champs).<br/><br/>
 • La commande ``AUTO_INCREMENT`` est utilisée afin de spécifier qu’une colonne ``int`` avec une ``PRIMARY KEY`` sera incrémentée automatiquement à chaque ajout d’enregistrement dans celle-ci.<br/><br/>
 • ``int(10)`` signifie qu'on a défini ``id`` comme ``INT UNSIGNED``. Ainsi, on pourra stocker des nombres allant de ``0`` jusqu'à ``4294967295`` (à noter que la valeur maximale est composée 10 chiffres, donc MySQL ajoute automatiquement le (10) dans la définition de la colonne qui (10) n'est qu'un indice de format et rien de plus. Ça n'a aucun effet sur la taille du nombre que vous pouvez stocker).<br/><br/>
+• Ici j'utilise ``VARCHAR``. Mais je peux aussi utiliser ``CHAR``. La différence est que ``CHAR`` est un type de données de longueur fixe, la taille de stockage de la valeur char est égale à la taille maximale de cette colonne. Étant donné que ``VARCHAR`` est un type de données de longueur variable, la taille de stockage de la valeur ``VARCHAR`` correspond à la longueur réelle des données saisies, et non à la taille maximale de cette colonne.<br/>
 • ``ENGINE=innodb`` permet de définir le moteur de stockage par défaut utilisé par MySQL. Son principal avantage par rapport aux autres moteurs de stockage de MySQL est qu'il permet des transactions ``ACID`` (atomiques, cohérentes, isolées et durables), ainsi que la gestion des clés étrangères avec vérification de la cohérence.<br/><br/>
 • Utilisez toujours ``DEFAULT CHARSET=utf8`` lors de la création de nouvelles tables. A ce stade, votre client et votre serveur MySQL doivent être en ``UTF-8`` (cf. https://my.cnf). n'oubliez pas que tous les langages que vous utilisez (tels que ``PHP``) doivent également être sous ``UTF-8``. Certaines versions de PHP utilisent leur propre lib client MySQL, qui peut ne pas être compatible avec ``UTF-8``.<br/>
 Il nous reste qu'à exécuter:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158256871-88e2a443-5c71-435e-9238-b9c3537e6bd9.png)
 <br/><br/>
-On peut constater que la table ``users`` et les colonnes ``id`` & ``username`` ont bien été créé dans la base de donnée ``sqlipaper`` avec les paramètres qu'on leur a assigné. Tout est prêt, il nous manque plus qu'à scripter le code SQL vulnérable.<br/>
+On peut constater que la table ``users`` et les colonnes ``id`` & ``username`` ont bien été créé dans la base de donnée ``sqlipaper`` avec les paramètres qu'on leur a assigné.<br/>
+Maintenant, quoi faire d'une base de donnée qui ne contient aucune donnée? Eh bien rien, c'est pour ça qu'on va directement insérer une donnée dans la colonne ``id`` et ``username`` de la manière suivante:<br/>
+```sql
+INSERT INTO users VALUES(1, "zyuomo");
+```
+Vous l'aurez deviné, l'instruction ``INSERT INTO`` est utilisé pour insérer de nouveaux enregistrements dans une table.<br/>
+J'insère la valeur ``1`` qui correspond à la colonne ``id`` et ``zyuomo`` à la colonne ``username``.<br/>
+Tout est prêt, il nous manque plus qu'à scripter le code SQL vulnérable.<br/>
 On se rend au fichier ``PHP`` qu'on a créé tout à l'heure, et c'est parti pour la premier type d'SQLi.<br/><br/>
 
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.<br/>
-
+L'opérateur SQL ``UNION`` est utilisé pour combiner les résultats de deux déclarations ``SELECT`` ou plus.<br/>
+Voici une instruction typique qui utilise l'opérateur UNION:
+```sql
+UNION SELECT id, username FROM users;
+```
+Cette instruction demande à la ``BDD`` de retourner la colonne ``id`` et ``username`` de la table ``users``.<br/>
+Chaque SELECTinstruction à l'intérieur UNIONdoit avoir le même nombre de colonnes
+Les colonnes doivent également avoir des types de données similaires
+Les colonnes de chaque SELECTinstruction doivent également être dans le même ordre
 
 ### Rerences
 - https://stackoverflow.com/questions/10879345/what-is-the-maximum-size-of-int10-in-mysql
 - https://stackoverflow.com/questions/202205/how-to-make-mysql-handle-utf-8-properly
 - https://dev.mysql.com/
 - https://www.cisecurity.org/wp-content/uploads/2017/05/SQL-Injection-White-Paper2.pdf
+- https://www.w3schools.com/sql/
