@@ -83,10 +83,12 @@ INSERT INTO users VALUES(1, "zyuomo");
 Vous l'aurez deviné, l'instruction ``INSERT INTO`` est utilisé pour insérer de nouveaux enregistrements dans une table.<br/>
 J'insère la valeur ``1`` qui correspond à la colonne ``id`` et ``zyuomo`` à la colonne ``username``.<br/>
 Tout est prêt, il nous manque plus qu'à scripter le code SQL vulnérable.<br/>
-On se rend au fichier ``PHP`` qu'on a créé tout à l'heure, et c'est parti pour la premier type d'SQLi.<br/><br/>
+On se rend au fichier ``PHP`` qu'on a créé tout à l'heure.<br/>
+On a plus qu'à provoquer la faille, 
 
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.<br/>
+
 L'opérateur SQL ``UNION`` est utilisé pour combiner les résultats de deux déclarations ``SELECT`` ou plus.<br/>
 Voici une instruction typique qui utilise l'opérateur UNION:
 ```sql
