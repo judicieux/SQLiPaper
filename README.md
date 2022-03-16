@@ -135,7 +135,7 @@ Petite vulgarisation du code vulnérable ci-dessus:<br/>
 • La première condition vérifie si le paramètre ``id`` soit pas vide.<br/>
 • Ensuite le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/>
 • La requête ``SQL`` est passée à la variable ``$query``. Ceux qui ont l'œil auront déjà remarqué le souci dans le code, mais on va en parler après.<br/>
-• La requête est ensuite effectuée à l'aide de ``mysqli_query()`` qui est tout simplement la fonction qui permet d'exécuter la requête dans la ``BDD`` et qui comporte en premier paramètre la connexion ``SQL`` et en deuxième paramètre la requête ``SQL``.
+• La requête est ensuite effectuée à l'aide de ``mysqli_query()`` qui est tout simplement la fonction qui permet d'exécuter la requête dans la ``BDD`` et qui comporte en premier paramètre la connexion ``SQL`` et en deuxième paramètre la requête ``SQL``.<br/>
 • Ensuite on vérifie le nombre de lignes résultant de notre requête à l'aide de ``mysqli_num_rows()``. Le comportement de ``mysqli_num_rows()`` dépend de l'utilisation de jeux de résultats bufferisés ou non. Cette fonction renvoie 0 pour les ensembles de résultats non tamponnés, sauf si toutes les lignes ont été récupérées du serveur. Ici en l'occurence on obtiendra ``zyuomo`` vu qu'on veut afficher uniquement la row ``username``.
 ### Rerences
 - https://stackoverflow.com/questions/10879345/what-is-the-maximum-size-of-int10-in-mysql
