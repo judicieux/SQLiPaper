@@ -119,8 +119,10 @@ Je tiens à préciser que toutes les interactions avec la ``BDD`` se feront sous
 L'utilisation de ``PDO`` est bien plus simple que ``mysqli``.<br/>
 Il utilise moins de méthodes pour exécuter une requête comparée à ``mysqli``.<br/>
 De plus, lors des requêtes préparées, il donne la possibilité de nommer les paramètres ce qui est pratique tant bien pour la lisibilité que pour éviter les erreurs de positionnement des paramètres.<br/>
-La raison que j'utilise ``mysqli`` est lié au fait que je sois plus familiarisé avec. C'est tout.<br/>
-Petite vulgarisation du code vulnérable ci-dessus.<br/>
+Petite vulgarisation du code vulnérable ci-dessus:<br/>
+• La première condition vérifie si le paramètre ``id`` soit pas vide.<br/>
+• Ensuite le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL.<br/>
+La chaîne de caractères string est encodée pour produire une chaîne SQL échappée, en tenant compte du jeu de caractères courant de la connexion.
 ### Rerences
 - https://stackoverflow.com/questions/10879345/what-is-the-maximum-size-of-int10-in-mysql
 - https://stackoverflow.com/questions/202205/how-to-make-mysql-handle-utf-8-properly
