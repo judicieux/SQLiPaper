@@ -116,10 +116,10 @@ if(!empty($_GET['id'])){
 ?>
 ```
 Je tiens à préciser que toutes les interactions avec la ``BDD`` se feront sous ``mysqli`` et non ``PDO``.<br/>
-L'utilisation de ``PDO`` est bien plus simple que ``mysqli``.<br/><br/>
+L'utilisation de ``PDO`` est bien plus simple que ``mysqli``.<br/>
 Il utilise moins de méthodes pour exécuter une requête comparée à ``mysqli``.<br/>
-De plus, lors des requêtes préparées, il donne la possibilité de nommer les paramètres ce qui est pratique tant bien pour la lisibilité que pour éviter les erreurs de positionnement des paramètres.<br/>
-Petite vulgarisation du code vulnérable ci-dessus:<br/><br/>
+De plus, lors des requêtes préparées, il donne la possibilité de nommer les paramètres ce qui est pratique tant bien pour la lisibilité que pour éviter les erreurs de positionnement des paramètres.<br/><br/>
+Petite vulgarisation du code vulnérable ci-dessus:<br/>
 • La première condition vérifie si le paramètre ``id`` soit pas vide.<br/>
 • Ensuite le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL.<br/>
 La chaîne de caractères string est encodée pour produire une chaîne SQL échappée, en tenant compte du jeu de caractères courant de la connexion.
