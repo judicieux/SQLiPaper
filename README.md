@@ -131,7 +131,7 @@ Même si l'utilisation de ``PDO`` est bien plus simple que ``mysqli``.<br/>
 En gros ``PDO`` utilise moins de méthodes pour exécuter une requête comparée à ``mysqli``.<br/>
 De plus, lors des requêtes préparées, il donne la possibilité de nommer les paramètres ce qui est pratique tant bien pour la lisibilité que pour éviter les erreurs de positionnement des paramètres.<br/><br/>
 Petite vulgarisation du code vulnérable ci-dessus:<br/><br/>
-• Tout d'abord on ouvre une connexion à notre serveur MySQL local avec la fonction ``mysqli connect()``. L'utilisateur ``MySQL`` par défaut dans WampServer est ``root`` et ne contient pas de mot de passe.<br/><br/>
+• Tout d'abord on ouvre une connexion à notre serveur MySQL local avec la fonction ``mysqli connect()``. L'utilisateur ``MySQL`` par défaut dans ``WampServer`` est ``root`` et ne contient pas de mot de passe.<br/><br/>
 • La première condition vérifie si le paramètre ``id`` soit pas vide.<br/><br/>
 • Ensuite le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
 • La requête ``SQL`` est passée à la variable ``$query``. Ceux qui ont l'œil auront déjà remarqué le souci dans le code, mais on va en parler après.<br/><br/>
