@@ -84,7 +84,7 @@ Vous l'aurez deviné, l'instruction ``INSERT INTO`` est utilisé pour insérer d
 J'insère la valeur ``1`` qui correspond à la colonne ``id`` et ``zyuomo`` à la colonne ``username``.<br/>
 Tout est prêt, il nous manque plus qu'à scripter le code SQL vulnérable.<br/>
 On se rend au fichier ``PHP`` qu'on a créé tout à l'heure.<br/>
-On a plus qu'à provoquer la faille, 
+Et c'est parti pour attaquer la première SQLi.<br/>
 
 ## Union Based
 Rentrons dans le vif du sujet en commençant par le plus simple.<br/>
@@ -95,7 +95,31 @@ Voici une instruction typique qui utilise l'opérateur UNION:
 UNION SELECT id, username FROM users;
 ```
 Cette instruction demande à la ``BDD`` de retourner la colonne ``id`` et ``username`` de la table ``users``.<br/>
+Le code suivant provoque la faille:
+```php
+<?php
 
+if(!empty($_GET['id'])){
+    $id = mysqli_real_escape_string($conn, $_GET['id']);
+    $query = "SELECT id, username FROM users WHERE id = '" . $_GET['id'] . "'";
+    $succ = mysqli_query($conn, $query);
+    $rank = 1;
+    if (mysqli_num_rows($succ)) {
+        while ($row = mysqli_fetch_array($succ)) {
+            echo "<center><h4 style='color:white'>{$row['username']} vous passe le bonjour!</h4><br><br></center>";
+
+            $rank++;
+        }
+    }
+}
+
+?>
+```
+Avant de commencer, je tiens à préciser que toutes les interactions avec la ``BDD`` se feront sous ``mysqli`` et non ``PDO``.<br/>
+L'utilisation de PDO est bien plus simple que mysqli.<br/>
+Il utilise moins de méthodes pour exécuter une requête comparée à mysqli.<br/>
+De plus, lors des requêtes préparées, il donne la possibilité de nommer les paramètres ce qui est pratique tant bien pour la lisibilité que pour éviter les erreurs de positionnement des paramètres.<br/>
+Petite vulgarisation du code vulnérable ci-dessus.<br/>
 ### Rerences
 - https://stackoverflow.com/questions/10879345/what-is-the-maximum-size-of-int10-in-mysql
 - https://stackoverflow.com/questions/202205/how-to-make-mysql-handle-utf-8-properly
