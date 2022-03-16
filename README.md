@@ -115,10 +115,11 @@ if(!empty($_GET['id'])){
 
 ?>
 ```
-Avant de commencer, je tiens à préciser que toutes les interactions avec la ``BDD`` se feront sous ``mysqli`` et non ``PDO``.<br/>
-L'utilisation de PDO est bien plus simple que mysqli.<br/>
-Il utilise moins de méthodes pour exécuter une requête comparée à mysqli.<br/>
+Je tiens à préciser que toutes les interactions avec la ``BDD`` se feront sous ``mysqli`` et non ``PDO``.<br/>
+L'utilisation de ``PDO`` est bien plus simple que ``mysqli``.<br/>
+Il utilise moins de méthodes pour exécuter une requête comparée à ``mysqli``.<br/>
 De plus, lors des requêtes préparées, il donne la possibilité de nommer les paramètres ce qui est pratique tant bien pour la lisibilité que pour éviter les erreurs de positionnement des paramètres.<br/>
+La raison que j'utilise ``mysqli`` est lié au fait que je sois plus familiarisé avec. C'est tout.<br/>
 Petite vulgarisation du code vulnérable ci-dessus.<br/>
 ### Rerences
 - https://stackoverflow.com/questions/10879345/what-is-the-maximum-size-of-int10-in-mysql
