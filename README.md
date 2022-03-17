@@ -94,7 +94,7 @@ Voici une instruction typique qui utilise l'opérateur UNION:
 ```sql
 UNION SELECT id, username FROM users;
 ```
-Cette instruction demande au ``SGBD`` de retourner la colonne ``id`` et ``username`` de la table ``users``.<br/>
+Cette instruction demande au ``SGBD`` d'afficher la colonne ``id`` et ``username`` de la table ``users``.<br/>
 Le code suivant provoque la faille:
 ```php
 <?php
@@ -157,7 +157,7 @@ La preuve, si on exécute la requête suivante:
 ```sql
 SELECT id, username FROM users WHERE id = 0 OR 1=1;
 ```
-On obtient tout de même ``zyuomo`` car on demande de retourner l'utilisateur avec comme id ``0`` (n'existe pas) **OU** tout utilisateur où 1 est égal à 1.<br/>
+On obtient tout de même ``zyuomo`` car on demande d'afficher l'utilisateur avec comme id ``0`` (n'existe pas) **OU** tout utilisateur où 1 est égal à 1.<br/>
 Dans l'url ça donne ça:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158894687-d238c3b2-feda-447d-875f-9c3bffbf94a7.png)
 <br/><br/>
