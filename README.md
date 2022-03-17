@@ -153,6 +153,14 @@ Si on rentre comme id ``1 OR 1 = 1``, la requête envoyée au ``SGBD`` sera:
 SELECT id, username FROM users WHERE id = 1 OR 1=1
 ```
 Le sens de la requête a été modifié. Le ``SGBD`` va donc sélectionner l'utilisateur qui a pour id ``1``, et l'utilisateur où 1 est égal à 1 (ce qui est tout le temps vrai).<br/>
+La preuve, si on exécute la requête suivante:
+```sql
+SELECT id, username FROM users WHERE id = 0 OR 1=1;
+```
+On obtient tout de même ``zyuomo`` car on demande de retourner l'utilisateur avec comme id ``0`` (n'existe pas) **OU** tout utilisateur où 1 est égal à 1.<br/>
+Dans l'url ça donne ça:<br/><br/>
+![image](https://user-images.githubusercontent.com/74382279/158894687-d238c3b2-feda-447d-875f-9c3bffbf94a7.png)
+<br/><br/>
 # Eviter
 • Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
 
