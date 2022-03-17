@@ -146,7 +146,7 @@ Maintenant, où se trouve la faille? Si on prête attention à la requête SQL o
 $query = SELECT id, username FROM users WHERE id = '" . $_GET['id'] . "'";
 ```
 On se contente de concaténer notre macro (qui est une simple chaîne de caractère) avec ce qu'il a tapé, et on envoie la requête telle quelle au ``SGBD``. C'est la raison qui rend l'injection possible.<br/>
-On part du principe que l'utilisateur a bien tapé un nombre, mais rien nous empêche d'envoyer autre chose.<br/>
+On part du principe qu'on a bien tapé un nombre, mais rien nous empêche d'envoyer autre chose.<br/>
 On peut par exemple mettre un bout de requête SQL pour changer le sens de la requête.<br/>
 Si on rentre comme id ``1 OR 1 = 1``, la requête envoyée au ``SGBD`` sera:
 ```sql
