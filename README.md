@@ -111,7 +111,7 @@ if($conn->connect_error){
 }
 
 if(!empty($_GET['id'])){
-    $query = "SELECT id, username FROM users WHERE id = '" . $_GET['id'] . "'";
+    $query = "SELECT id, username FROM users WHERE id = " . $_GET['id'];
     $succ = mysqli_query($conn, $query);
     $rank = 1;
     if (mysqli_num_rows($succ)) {
