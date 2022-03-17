@@ -111,7 +111,6 @@ if($conn->connect_error){
 }
 
 if(!empty($_GET['id'])){
-    $id = mysqli_real_escape_string($conn, $_GET['id']);
     $query = "SELECT id, username FROM users WHERE id = '" . $_GET['id'] . "'";
     $succ = mysqli_query($conn, $query);
     $rank = 1;
@@ -133,7 +132,6 @@ De plus, lors des requêtes préparées, il donne la possibilité de nommer les 
 Petite vulgarisation du code vulnérable ci-dessus:<br/><br/>
 • Tout d'abord on ouvre une connexion à notre serveur MySQL local avec la fonction ``mysqli connect()``. L'utilisateur ``MySQL`` par défaut dans ``WampServer`` est ``root`` et ne contient pas de mot de passe.<br/><br/>
 • La première condition vérifie si le paramètre ``id`` soit pas vide.<br/><br/>
-• Ensuite le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
 • La requête ``SQL`` est passée à la variable ``$query``. Ceux qui ont l'œil auront déjà remarqué le souci dans le code, mais on va en parler après.<br/><br/>
 • La requête est ensuite effectuée à l'aide de ``mysqli_query()`` qui est tout simplement la fonction qui permet d'exécuter la requête dans le ``SGBD`` et qui comporte en premier paramètre la connexion ``SQL`` et en deuxième paramètre la requête ``SQL``.<br/><br/>
 • Ensuite on vérifie le nombre de lignes résultant de notre requête à l'aide de ``mysqli_num_rows()``. Le comportement de ``mysqli_num_rows()`` dépend de l'utilisation de jeux de résultats bufferisés ou non. Cette fonction renvoie 0 pour les ensembles de résultats non tamponnés, sauf si toutes les lignes ont été récupérées du serveur.<br/><br/>
@@ -143,13 +141,22 @@ Si on passe ``1`` au paramètre ``id`` on obtient:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158890989-11f49fe4-cf66-43ca-a7e5-a59329a3371f.png)
 <br/><br/>
 Logique, vu qu'on a déjà inséré l'utilisateur ``zyuomo`` avec comme id ``1`` dans la table ``users``.<br/>
-Maintenant, où se trouve la faille? Si on prête attention à la requête SQL on peut voir que l'entrée de l'utilisateur n'est pas filtrée: on se contente de concaténer notre macro (qui est une simple chaîne de caractère) avec ce qu'il a tapé, et on envoie la requête telle quelle au ``SGBD``. C'est la raison qui rend l'injection possible.<br/>
-On part du principe que l'utilisateur a bien tapé un nombre, mais rien nous empêche d'envoyer autre chose. On peut par exemple mettre un bout de requête SQL pour changer le sens de la requête.
-
-Si on rentre comme id ``1 OR 1 = 1``, la requête envoyée au SGBD sera:
+Maintenant, où se trouve la faille? Si on prête attention à la requête SQL on peut voir que l'entrée de l'utilisateur n'est pas filtrée: 
+```php
+$query = SELECT id, username FROM users WHERE id = '" . $_GET['id'] . "'";
+```
+On se contente de concaténer notre macro (qui est une simple chaîne de caractère) avec ce qu'il a tapé, et on envoie la requête telle quelle au ``SGBD``.<br/>
+C'est la raison qui rend l'injection possible.<br/>
+On part du principe que l'utilisateur a bien tapé un nombre, mais rien nous empêche d'envoyer autre chose.<br/>
+On peut par exemple mettre un bout de requête SQL pour changer le sens de la requête.<br/>
+Si on rentre comme id ``1 OR 1 = 1``, la requête envoyée au ``SGBD`` sera:
 ```sql
 SELECT id, username FROM users WHERE id = 1 OR 1=1
 ```
+
+# Eviter
+• Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
+
 ### Rerences
 - https://stackoverflow.com/questions/10879345/what-is-the-maximum-size-of-int10-in-mysql
 - https://stackoverflow.com/questions/202205/how-to-make-mysql-handle-utf-8-properly
