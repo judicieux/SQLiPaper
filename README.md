@@ -152,7 +152,7 @@ Si on rentre comme id ``1 OR 1 = 1``, la requête envoyée au ``SGBD`` sera:
 ```sql
 SELECT id, username FROM users WHERE id = 1 OR 1=1
 ```
-
+Le sens de la requête a été modifié. Le ``SGBD`` va donc sélectionner l'utilisateur qui a pour id ``1``, et l'utilisateur où 1 est égal à 1 (ce qui est tout le temps vrai).<br/>
 # Eviter
 • Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
 
