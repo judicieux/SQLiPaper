@@ -136,10 +136,12 @@ Petite vulgarisation du code vulnérable ci-dessus:<br/><br/>
 • Ensuite le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
 • La requête ``SQL`` est passée à la variable ``$query``. Ceux qui ont l'œil auront déjà remarqué le souci dans le code, mais on va en parler après.<br/><br/>
 • La requête est ensuite effectuée à l'aide de ``mysqli_query()`` qui est tout simplement la fonction qui permet d'exécuter la requête dans la ``BDD`` et qui comporte en premier paramètre la connexion ``SQL`` et en deuxième paramètre la requête ``SQL``.<br/><br/>
-• Ensuite on vérifie le nombre de lignes résultant de notre requête à l'aide de ``mysqli_num_rows()``. Le comportement de ``mysqli_num_rows()`` dépend de l'utilisation de jeux de résultats bufferisés ou non. Cette fonction renvoie 0 pour les ensembles de résultats non tamponnés, sauf si toutes les lignes ont été récupérées du serveur. Ici en l'occurence on obtiendra ``zyuomo`` vu qu'on veut afficher uniquement la row ``username``.<br/><br/>
+• Ensuite on vérifie le nombre de lignes résultant de notre requête à l'aide de ``mysqli_num_rows()``. Le comportement de ``mysqli_num_rows()`` dépend de l'utilisation de jeux de résultats bufferisés ou non. Cette fonction renvoie 0 pour les ensembles de résultats non tamponnés, sauf si toutes les lignes ont été récupérées du serveur.<br/><br/>
+• Puis on crée le tableau ``$row`` et on y ajoute tous les résultats grâce à ``mysqli_fetch_array()``. ``mysqli_fetch_array()`` récupère la ligne suivante d'un ensemble de résultats sous forme de tableau associatif, numérique ou les deux. Pour terminer en echo ``zyuomo`` vu qu'on veut afficher uniquement la row ``username``.<br/>
 ### Rerences
 - https://stackoverflow.com/questions/10879345/what-is-the-maximum-size-of-int10-in-mysql
 - https://stackoverflow.com/questions/202205/how-to-make-mysql-handle-utf-8-properly
 - https://dev.mysql.com/
 - https://www.cisecurity.org/wp-content/uploads/2017/05/SQL-Injection-White-Paper2.pdf
 - https://www.w3schools.com/sql/
+- https://www.php.net/
