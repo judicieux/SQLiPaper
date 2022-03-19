@@ -166,6 +166,7 @@ Dans l'url ça donne ça:<br/><br/>
 ```sql
 UNION SELECT NULL,CONCAT_WS(" | ",user(),version(),database())--+-
 ```
+![image](https://user-images.githubusercontent.com/74382279/159135842-efa9684e-24e5-4299-b907-2498353465d2.png)
 
 # Eviter
 • Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
