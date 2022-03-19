@@ -162,6 +162,11 @@ Dans l'url ça donne ça:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/158894687-d238c3b2-feda-447d-875f-9c3bffbf94a7.png)
 <br/><br/>
 • J'utilise ``+`` pour remplacer les espaces, c'est plus lisible qu'avoir des ``%20`` partout.<br/>
+• Maintenant si je veux afficher la version de la BDD MySQL, l'username et l'hostname de la session MySQL et le nom de la BDD. J'exécute la requête suivante:
+```sql
+UNION SELECT NULL,CONCAT_WS(" | ",user(),version(),database())--+-
+```
+
 # Eviter
 • Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
 
