@@ -165,8 +165,9 @@ Dans l'url ça donne ça:<br/><br/>
 • Pour connaître le nombre de sélections on va utiliser ``ORDER BY``. La commande ``ORDER BY`` permet de trier les lignes dans un résultat d’une requête SQL.
 On peut aussi utiliser la commande ``GROUP BY``. Elle est utilisée pour grouper plusieurs résultats et utiliser une fonction de totaux sur un groupe de résultat.<br/>
 ![image](https://user-images.githubusercontent.com/74382279/159136013-292fac1d-2d97-4395-88fa-5a07251685c4.png)
-• On obtient une erreur, donc il n'y a pas 3 sélections.<br/>
+• On obtient une erreur, donc il n'y a pas 3 sélections.<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/159136046-84fc0649-c1a2-415a-a862-7b183d47bcd9.png)
+<br/><br/>
 • A partir de 2 sélections il n'y a plus d'erreur, on peut donc utiliser ``UNION SELECT`` pour avoir notre point d'entrée.<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/159136155-c4f63ffb-a4d8-45bc-9f03-789b74edb976.png)
 <br/><br/>
