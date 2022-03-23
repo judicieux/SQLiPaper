@@ -169,7 +169,7 @@ On peut aussi utiliser la commande ``GROUP BY``. Elle est utilisée pour grouper
 • On obtient une erreur, donc il n'y a pas 3 sélections.<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/159136046-84fc0649-c1a2-415a-a862-7b183d47bcd9.png)
 <br/><br/>
-• A partir de 2 sélections il n'y a plus d'erreur, on peut donc utiliser ``UNION SELECT`` pour avoir notre point d'entrée.<br/>
+• A partir de 2 sélections il n'y a plus d'erreur, on peut donc utiliser ``UNION SELECT`` pour avoir notre point d'entrée.<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/159136155-c4f63ffb-a4d8-45bc-9f03-789b74edb976.png)
 <br/><br/>
 • Si on remplace la deuxième sélection par une commande ``DIOS`` (Dump in one shot). Ce DIOS  utiliser est utilise contre les WAF qui bloquent concat.<br/><br/>
