@@ -217,6 +217,16 @@ SELECT
 )
 ```
 <br/><br/>
+• ``export_set()`` retourne une chaîne de caractères qui représente les bits en un nombre.<br/><br/>
+• La syntaxe ressemble à ceci:<br/><br/>
+``EXPORT_SET(bits,on,off[,séparateur[,nombre_de_bits]])``
+<br/><br/>
+**bits**: Il s'agit du numéro pour lequel vous souhaitez que les résultats soient renvoyés. Pour chaque bit défini dans cette valeur, vous obtenez une chaîne ``on``, et pour chaque bit non défini dans la valeur, vous obtenez une chaîne ``off``. Les bits sont examinés de droite à gauche (des bits de poids faible aux bits de poids fort).<br/><br/>
+**on**: C'est ce qui est renvoyé pour tous les bits.<br/><br/>
+off: C'est ce qui est renvoyé pour tous les bits désactivés .<br/><br/>
+**séparateur**: Il s'agit d'un argument facultatif que vous pouvez utiliser pour spécifier le séparateur à utiliser. La valeur par défaut est le caractère virgule.<br/><br/>
+**nombre_de_bits**: Le nombre de bits à examiner. La valeur par défaut est 64. Si vous fournissez une valeur plus élevée, celle-ci est tronquée à ``64`` si elle est supérieure à ``64``.<br/><br/>
+
 # Eviter
 • Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
 
