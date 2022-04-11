@@ -20,7 +20,7 @@ Voici les différents types d'SQLis énumérés du plus soft au plus edgy (selon
 <br/><br/>
 Dans les 4 cas, nous utiliserons les mêmes méthodes d'approche.<br/>
 J'introduirai aussi quelques techniques de bypass basiques pour avoid plusieurs filtres présents dans des ``WAF``.<br/>
-J'évoquerai aussi la puissance des **jointures SQL** et à quoi ça sert de les utiliser dans le contexte d'une attaque.<br/>
+J'évoquerai aussi la puissance des **jointures SQL** et à quoi ça sert de les utiliser dans le contexte d'une attaque SQL.<br/>
 
 # Setup
 Avant de commencer, il est important de déployer un serveur web localement ainsi que ``PMA`` (phpMyAdmin).<br/>
