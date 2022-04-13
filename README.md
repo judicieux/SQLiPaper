@@ -227,6 +227,40 @@ SELECT
 **séparateur** (``@``): Il s'agit d'un argument facultatif que vous pouvez utiliser pour spécifier le séparateur à utiliser. La valeur par défaut est le caractère virgule.<br/><br/>
 **nombre_de_bits** (``2``): Le nombre de bits à examiner. La valeur par défaut est 64. Si vous fournissez une valeur plus élevée, celle-ci est tronquée à ``64`` si elle est supérieure à ``64``.<br/><br/>
 
+## Blind Based
+```php
+<?php
+
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "sqlipaper";
+$conn = new mysqli($host, $user, $password, $database);
+
+if($conn->connect_error){
+    die("Connection failed: " . $conn->connect_error);
+}
+
+
+if(!empty($_GET['id']))
+{
+    $id = mysqli_real_escape_string($conn, $_GET['id']);
+    $query = "SELECT id, username FROM users WHERE id = ".$id;
+    $rs_article = mysqli_query($conn, $query);
+
+    if(mysqli_num_rows($rs_article) == 1)
+    {
+        echo "gq4022";
+    }
+    else
+    {
+        echo "";
+    }
+}
+
+?>
+```
+
 # Eviter
 • Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
 
