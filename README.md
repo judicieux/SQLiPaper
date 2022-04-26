@@ -271,6 +271,10 @@ On obtient ``gq4022``, cela veut dire qu'il y a au moins une donnée dans la ré
 Logiquement, si on passe 3 au ``order by`` (supérieur au nombre de sélections dans la requête SQL) on devrait obtenir une erreur ``Warning: mysqli_num_rows() expects parameter 1 to be mysqli_result``.<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/165357330-75fb3553-014d-4058-b5b6-c9e8866bb1e4.png)
 <br/><br/>
+Notre vecteur d'attaque est donc prêt à être exploité. Maintenant la question qu'on peut se poser c'est "Comment afficher les données en brute si on n'a comme seule information l'équivalent à ``True`` ou ``False``?".<br/>
+Et bien c'est là que la fonction ``substr()`` en SQL va nous être utile. Alors à quoi sert cette fonction?<br/>
+Elle sert tout simplement à extraire une partie d'une chaîne, par exemple pour tronquer un texte.<br/>
+Cette fonction prend en compte 3 paramètres, pour le premier paramètre on va préciser la chaîne qu'on veut extraire, le deuxième paramètre..... TODO
 # Eviter
 • Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
 
