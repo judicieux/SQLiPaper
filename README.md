@@ -260,10 +260,17 @@ if(!empty($_GET['id']))
 
 ?>
 ```
-Les SQLi font partie des types d'SQLi les plus simples quand on les maîtrise.<br/>
-Tout d'abord, notez bien que cette fois-ci les réponses côté serveur ne seront pas rendered dans la page web.<br/>
+Les ``SQLi blind based`` font partie des types d'``SQLi`` les plus simples quand on les maîtrise.<br/>
+Tout d'abord, notez bien que cette fois-ci les réponses des requêtes SQL ne seront pas rendered dans la page web.<br/>
 On va donc devoir baser nos vecteurs d'attaques sur une information boolean (``True`` ou ``False``).<br/>
-Pour mieux vous expliquer je vais vous montrer un exemple. On garde les même habitudes, on passe l'instruction ``order by`` et on précise 1 sélection (ce qui va forcément être ``True``) car dans le code source on constate bien que dans la requête SQL ``id`` et ``username`` sont sélectionnés (=2 sélections)<br/>
+Pour mieux vous expliquer je vais vous montrer un exemple.<br/>
+On garde les même habitudes, on passe l'instruction ``order by`` et on précise 1 sélection (ce qui va forcément être ``True``) car dans le code source on constate bien que dans la requête SQL ``id`` et ``username`` sont sélectionnés (=2 sélections).<br/><br/>
+![image](https://user-images.githubusercontent.com/74382279/165356750-b861cf24-a569-4f32-959c-f38cd5f2f2c9.png)
+<br/><br/>
+On obtient ``gq4022``, cela veut dire qu'il y a au moins une donnée dans la réponse de ``$rs_article``.<br/>
+Logiquement, si on passe 3 au ``order by`` (supérieur au nombre de sélections dans la requête SQL) on devrait obtenir une erreur ``Warning: mysqli_num_rows() expects parameter 1 to be mysqli_result``.<br/><br/>
+![image](https://user-images.githubusercontent.com/74382279/165357330-75fb3553-014d-4058-b5b6-c9e8866bb1e4.png)
+<br/><br/>
 # Eviter
 • Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
 
