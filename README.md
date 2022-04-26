@@ -260,7 +260,10 @@ if(!empty($_GET['id']))
 
 ?>
 ```
-
+Les SQLi font partie des types d'SQLi les plus simples quand on les maîtrise.<br/>
+Tout d'abord, notez bien que cette fois-ci les réponses côté serveur ne seront pas rendered dans la page web.<br/>
+On va donc devoir baser nos vecteurs d'attaques sur une information boolean (``True`` ou ``False``).<br/>
+Pour mieux vous expliquer je vais vous montrer un exemple. On garde les même habitudes, on passe l'instruction ``order by`` et on précise 1 sélection (ce qui va forcément être ``True``) car dans le code source on constate bien que dans la requête SQL ``id`` et ``username`` sont sélectionnés (=2 sélections)<br/>
 # Eviter
 • Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
 
