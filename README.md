@@ -274,12 +274,12 @@ Logiquement, si on passe 3 au ``order by`` (supérieur au nombre de sélections 
 Notre vecteur d'attaque est donc prêt à être exploité. Maintenant la question qu'on peut se poser c'est "Comment afficher les données en brute si on n'a comme seule information l'équivalent à ``True`` ou ``False``?".<br/>
 Et bien c'est là que la fonction ``substr()`` en SQL va nous être utile. Alors à quoi sert cette fonction?<br/>
 Elle sert tout simplement à extraire une partie d'une chaîne, par exemple pour tronquer un texte.<br/>
-Cette fonction prend en compte 3 paramètres, pour le premier paramètre on va préciser la chaîne qu'on veut extraire, le deuxième paramètre la position, et le troisième paramètre le nombre de caractères à extraire. Pour assurer la facilité on va extraire 1 caractère par caractère.<br/>
+Cette fonction prend en compte 3 paramètres. Dans le premier paramètre on va préciser la ``chaîne`` qu'on veut extraire, dans le deuxième paramètre la ``position``, et le troisième le ``nombre de caractères`` à ``extraire``. Pour assurer la facilité on va extraire 1 caractère par caractère.<br/>
 Pour commencer on peut vérifier la taille de la row avec:<br/>
 ```sql
 AND (SELECT LENGTH(username) > 15)--+-
 ```
-• On obtient la réponse "gq4022" ce qui équivaut à ``True``. Donc nous savons que la row dans la colonne ``username`` fait plus de 15 caractères.<br§>
+• On obtient la réponse "gq4022" ce qui équivaut à ``True``. Donc nous savons que la row dans la colonne ``username`` fait plus de 15 caractères.<br/>
 • On comprend vite alors que la taille exacte est de 19 caractères, car:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/166218665-1d65e9cf-899d-40d0-82c6-8d4e311b14a7.png)
 <br/><br/>
