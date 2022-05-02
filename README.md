@@ -277,8 +277,13 @@ Elle sert tout simplement à extraire une partie d'une chaîne, par exemple pour
 Cette fonction prend en compte 3 paramètres, pour le premier paramètre on va préciser la chaîne qu'on veut extraire, le deuxième paramètre la position, et le troisième paramètre le nombre de caractères à extraire. Pour assurer la facilité on va extraire 1 caractère par caractère.<br/>
 Pour commencer on peut vérifier la taille de la row avec:<br/>
 ```sql
-AND (SELECT LENGTH(username)>10)--+-
+AND (SELECT LENGTH(username) > 15)--+-
 ```
+• On obtient la réponse "gq4022" ce qui équivaut à ``True``. Donc nous savons que la row dans la colonne ``username`` fait plus de 15 caractères.<br§>
+• On comprend vite alors que la taille exacte est de 19 caractères, car:<br/><br/>
+![image](https://user-images.githubusercontent.com/74382279/166218665-1d65e9cf-899d-40d0-82c6-8d4e311b14a7.png)
+<br/><br/>
+
 # Eviter
 • Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
 
