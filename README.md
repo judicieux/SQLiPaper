@@ -265,7 +265,7 @@ Tout d'abord, notez bien que cette fois-ci les réponses des requêtes SQL ne se
 On va donc devoir baser nos vecteurs d'attaques sur une information boolean (``True`` ou ``False``).<br/>
 Pour mieux vous expliquer je vais vous montrer un exemple.<br/>
 On garde les même habitudes, on passe l'instruction ``order by`` et on précise 1 sélection (ce qui va forcément être ``True``) car dans le code source on constate bien que dans la requête SQL ``id`` et ``username`` sont sélectionnés (=2 sélections).<br/><br/>
-![image](https://user-images.githubusercontent.com/74382279/165356750-b861cf24-a569-4f32-959c-f38cd5f2f2c9.png)
+![image](https://user-images.githubusercontent.com/74382279/167845742-1318820e-39ff-4ddf-92a5-c04a10de8f8b.png)
 <br/><br/>
 On obtient ``gq4022``, cela veut dire qu'il y a au moins une donnée dans la réponse de ``$rs_article``.<br/>
 Logiquement, si on passe 3 au ``order by`` (supérieur au nombre de sélections dans la requête SQL) on devrait obtenir une erreur ``Warning: mysqli_num_rows() expects parameter 1 to be mysqli_result``.<br/><br/>
