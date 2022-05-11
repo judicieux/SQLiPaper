@@ -281,7 +281,7 @@ AND (SELECT LENGTH(username) > 15)--+-
 ```
 • On obtient la réponse "gq4022" ce qui équivaut à ``True``. Donc nous savons que la row dans la colonne ``username`` fait plus de 15 caractères.<br/>
 • On comprend vite alors que la taille exacte est de 19 caractères, car:<br/><br/>
-![image](https://user-images.githubusercontent.com/74382279/166218665-1d65e9cf-899d-40d0-82c6-8d4e311b14a7.png)
+![image](https://user-images.githubusercontent.com/74382279/167844980-f55dfab9-7a3f-4488-a10c-375b36683816.png)
 <br/><br/>
 
 # Eviter
