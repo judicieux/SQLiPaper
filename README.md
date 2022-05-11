@@ -269,7 +269,7 @@ On garde les même habitudes, on passe l'instruction ``order by`` et on précise
 <br/><br/>
 On obtient ``gq4022``, cela veut dire qu'il y a au moins une donnée dans la réponse de ``$rs_article``.<br/>
 Logiquement, si on passe 3 au ``order by`` (supérieur au nombre de sélections dans la requête SQL) on devrait obtenir une erreur ``Warning: mysqli_num_rows() expects parameter 1 to be mysqli_result``.<br/><br/>
-![image](https://user-images.githubusercontent.com/74382279/165357330-75fb3553-014d-4058-b5b6-c9e8866bb1e4.png)
+![image](https://user-images.githubusercontent.com/74382279/167845489-ec88657b-5164-4ee3-b823-b17255a4fca8.png)
 <br/><br/>
 Notre vecteur d'attaque est donc prêt à être exploité. Maintenant la question qu'on peut se poser c'est "Comment afficher les données en brute si on n'a comme seule information l'équivalent à ``True`` ou ``False``?".<br/>
 Et bien c'est là que la fonction ``substr()`` en SQL va nous être utile. Alors à quoi sert cette fonction?<br/>
