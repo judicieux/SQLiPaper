@@ -283,6 +283,18 @@ AND (SELECT LENGTH(username) > 15)--+-
 • On comprend vite alors que la taille exacte est de 19 caractères, car:<br/><br/>
 ![image](https://user-images.githubusercontent.com/74382279/167845261-7359094f-e4b8-4045-917e-f3c365728873.png)
 <br/><br/>
+• Alors que faire de cette information? Et bien elle s'avère très utile. Rappelez-vous, afin d'utiliser ``substr()`` nous avons besoin du nombre de caractères exact à extraire.<br/>
+• Maintenant que nous savons ça, on peut attaquer la partie exploitation !
+### Exploitation
+• Comme dit précédemment, l'idée est d'extraire chaque caractère de la row username individuellement de sorte à ce qu'on obtient un résultat final nous affichant la donnée en clair. Pour ce faire nous allons scripter un petit exploit en Python afin d'automatiser l'attaque.<br/>
+• Tout d'abord on store tout l'alphabet dans un array (en partant du principe que la row username ne contient pas de caractères spéciaux.<br/>
+```py
+>>> alphabet = [chr(i) for i in range(ord('a'), ord('z'))]
+>>> for i in alphabet:
+...     print(i, end='', flush=True)
+abcdefghijklmnopqrstuvwxy
+>>>
+```
 
 # Eviter
 • Le paramètre id est sanitized par ``mysqli_real_escape_string()``. Dans son style procédural cette fonction est utilisée pour créer une chaîne SQL valide qui pourra être utilisée dans une requête SQL. La chaîne de caractères string est encodée pour produire une chaîne ``SQL escaped``, en tenant compte du jeu de caractères courant de la connexion.<br/><br/>
